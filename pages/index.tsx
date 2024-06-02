@@ -16,7 +16,7 @@ export default function Home() {
       </Head>
       <div>
         <iframe
-          src="https://kaki-sampleapp.vercel.app/public/unity/index.html"
+          src="https://kaki-sampleapp.vercel.app/unity/index.html"
           width="100%"
           height="600"
         />
