@@ -15,7 +15,7 @@ export const AppLoading = ({ loadingProgression }: Props) => {
           lineHeight: "100vh",
         }}
       >
-        Now loading: {loadingProgression * 100} %
+        Now loading: {Math.floor(loadingProgression * 100)} %
       </div>
     </>
   );
