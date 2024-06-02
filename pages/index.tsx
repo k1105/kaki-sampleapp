@@ -3,11 +3,12 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { Unity, useUnityContext } from "react-unity-webgl";
+import { AppLoading } from "@/components/AppLoading";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const { unityProvider } = useUnityContext({
+  const { unityProvider, loadingProgression, isLoaded } = useUnityContext({
     loaderUrl: "unity/Build/WEBGL.loader.js",
     dataUrl: "unity/Build/WEBGL.data",
     frameworkUrl: "unity/Build/WEBGL.framework.js",
@@ -23,6 +24,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div style={{ width: "100vw", height: "100vh" }}>
+        <AppLoading loadingProgression={loadingProgression} />
         <Unity
           unityProvider={unityProvider}
           style={{
