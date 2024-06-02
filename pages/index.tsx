@@ -23,7 +23,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div style={{ width: "100vw", height: "100vh" }}>
-        <Unity unityProvider={unityProvider} />
+        <Unity
+          unityProvider={unityProvider}
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            zIndex: 1,
+          }}
+        />
       </div>
     </>
   );
