@@ -2,10 +2,18 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import { Unity, useUnityContext } from "react-unity-webgl";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const { unityProvider } = useUnityContext({
+    loaderUrl: "unity/Build/WEBGL.loader.js",
+    dataUrl: "unity/Build/WEBGL.data",
+    frameworkUrl: "unity/Build/WEBGL.framework.js",
+    codeUrl: "unity/Build/WEBGL.wasm",
+  });
+
   return (
     <>
       <Head>
@@ -14,12 +22,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
-        <iframe
-          src="https://kaki-sampleapp.vercel.app/unity/index.html"
-          width="100%"
-          height="600"
-        />
+      <div style={{ width: "100vw", height: "100vh" }}>
+        <Unity unityProvider={unityProvider} />
       </div>
     </>
   );
