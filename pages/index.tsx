@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { Unity, useUnityContext } from "react-unity-webgl";
 import { AppLoading } from "@/components/AppLoading";
+import DraggableCircle from "@/components/DraggableCircle";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,6 +37,9 @@ export default function Home() {
             zIndex: 1,
           }}
         />
+        <div style={{ height: "100vh", width: "100vw", position: "relative" }}>
+          <DraggableCircle />
+        </div>
       </div>
     </>
   );
