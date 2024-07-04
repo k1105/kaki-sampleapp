@@ -9,10 +9,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const { unityProvider, loadingProgression, isLoaded } = useUnityContext({
-    loaderUrl: "unity/Build/WEBGL.loader.js",
-    dataUrl: "unity/Build/WEBGL.data",
-    frameworkUrl: "unity/Build/WEBGL.framework.js",
-    codeUrl: "unity/Build/WEBGL.wasm",
+    loaderUrl: "unity/240704/Build/240704.loader.js",
+    dataUrl: "unity/240704/Build/240704.data",
+    frameworkUrl: "unity/240704/Build/240704.framework.js",
+    codeUrl: "unity/240704/Build/240704.wasm",
   });
 
   return (
